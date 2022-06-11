@@ -1,0 +1,395 @@
+
+<DOCTYPE html>
+<link rel="shortcut icon" href="/favicon.ico"/>
+
+<style>
+	#menu div{
+		float:left;
+		font-size:22;
+		margin-left:50;
+		margin-top:30;
+	}
+	div a{
+		color:white;
+		text-decoration: none;
+	}
+/**
+html {
+    filter: progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);
+    -webkit-filter: grayscale(100%);
+}
+**/
+</style>
+<html>
+
+<!DOCTYPE html>
+<style>
+:root {
+	--background-color: #2c3e50;
+	--border-color: #7591AD;
+	--text-color: #34495e;
+	--color1: #ec3e27;
+	--color2: #fd79a8;
+	--color3: #0984e3;
+	--color4: #00b894;
+	--color5: #fdcb6e;
+	--color6: #e056fd;
+	--color7: #F97F51;
+	--color8: #BDC581;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 14px;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--background-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* font-family: 'Times New Roman', Times, serif; */
+}
+
+.channel {
+	position: absolute;
+	width: 80%;
+	text-align: center;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -200px);
+	font-size: 30px;
+	font-weight: bold;
+	color: #fff;
+	z-index: 999;
+}
+
+.container {
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	perspective: 800px;
+	/* perspective-origin: left bottom; */
+	transform-style: preserve-3d;
+
+}
+
+.line {
+	position: absolute;
+	width: 200px;
+	height: 3px;
+	border-radius: 3px;
+	/* background-color: #fff; */
+	background-image: linear-gradient(to right, var(--color), #ffffff50, transparent);
+	animation: down 1s linear infinite both;
+	animation-delay: calc(var(--d) * 0.3s);
+
+}
+
+.line::before,
+.line::after {
+	position: absolute;
+	content: "";
+	width: inherit;
+	height: inherit;
+	background-image: inherit;
+
+}
+
+.line::before {
+	filter: blur(5px);
+}
+
+.line::after {
+	filter: blur(10px);
+}
+
+
+@keyframes down {
+	0% {
+		transform: translateY(calc(var(--z) * 60px)) 
+		translateZ(calc(var(--z) * 100px)) 
+		rotate(-45deg) 
+		translateX(calc(var(--x) * 100px));
+	}
+	100% {
+		transform: translateY(calc(var(--z) * 60px))
+		 translateZ(calc(var(--z) * 100px)) 
+		 rotate(-45deg) 
+		 translateX(calc(var(--x) * -100px));
+
+	}
+}
+.channel{
+	background: linear-gradient(to right,red,blue);
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+</style>
+
+
+
+		
+<canvas  style="background:#000000;position:absolute;z-index:8;left:0;top:0;height:100%;width:100%" id="canvas"></canvas>
+
+       	
+<div id='two' class="container" style="position:absolute;z-index:9;left:0;top:0" >
+
+			<div class="channel" style='color:white'>
+		
+				欢迎username使用编程联盟，请在里面好好学习哦<br>期待老师更新更多的内容,欢迎大家推荐同学试玩<br>
+				<h1>天梯榜</h1>
+				恭喜朱黄鸿平获得天梯榜第一名<br>恭喜王靖翔获得天梯榜第二名<br>恭喜贺亮获得天梯榜第三名
+			</div>
+
+			<div class="line" style="--color:#ec3e27;--x:3;--z:3;--d:1;"></div>
+			<div class="line" style="--color:#fff;--x:3;--z:2;--d:2;"></div>
+			<div class="line" style="--color:#fff;--x:4;--z:1;--d:3;"></div>
+			<div class="line" style="--color:#fd79a8;--x:4;--z:0;--d:1;"></div>
+			<div class="line" style="--color:#fff;--x:6;--z:-1;--d:2;"></div>
+			<div class="line" style="--color:#0984e3;--x:6;--z:-2;--d:3;"></div>
+			<div class="line" style="--color:#fff;--x:8;--z:-3;--d:1;"></div>
+			<div class="line" style="--color:#fff;--x:10;--z:-4;--d:2;"></div>
+			<div class="line" style="--color:#fff;--x:12;--z:-5;--d:3;"></div>
+			<div class="line" style="--color:#fff;--x:14;--z:-6;--d:1;"></div>
+			<div class="line" style="--color:#fff;--x:16;--z:-7;--d:2;"></div>
+			<div class="line" style="--color:#fff;--x:18;--z:-8;--d:3;"></div>
+			<div class="line" style="--color:#e056fd;--x:20;--z:-9;--d:1;"></div>
+
+			
+		</div>
+
+
+
+		
+		
+
+
+
+<body style="background-image:url(/bg2.gif);z-index:1;left:0;top:0" id='bo'>  
+	
+
+
+<img src='/logo.png' style="float:left;width:260;margin-left:20"/>
+	<div id='menu'>
+		<div><a href='/home'>游戏主页</a></div>
+		<div><a href='/panel'>个人中心</a></div>
+		<div><a href='/about'>关于游戏</a></div>
+		<div><a href='/rank' id='rank'>天梯榜</a>
+		</div>
+		<div><a href='/words'>留言板</a></div>
+		<div><a href='/shop'>商城系统</a></div>
+		<div><a href='/rank3'>2345关卡排行</a></div>
+		<div><a href='/python'>python</a></div>
+		<div><a href='/chat1'>聊天</a></div>
+		<div><a href='/htmlJs'>html+js</a></div>
+		<div><a href='/workHome'>作业区(python)</a></div>
+		<div><a href='/jsWork'>作业区(js)</a></div>
+		<div><a href='/QAHome'>问答区</a></div>
+		<div><a href='/getP'>得P币</a></div>
+		<!--<div><a href='/super/3'>出题(第三关)</a></div>-->
+	</div>
+	
+	<div style="clear:both"></div>
+
+	
+	
+	 
+	<br>
+            <p style="color:white;margin-left:50"><span style='color:white'>等级:Lv0 经验值:0 用户名:<span id='username'>username</span></span> <a style="color:red;" href="/logout"> 注销</a><a style="color:yellow;cursor:pointer" id='close1'> 关闭进场动画</a><a style="color:yellow;cursor:pointer" id='open1'> 开启进场动画</a></p>  
+	
+            <marquee style="color:yellow;font-size:17" scrollamount='10'>贺亮说:编程联盟项目组大力招人,跟着贺老师亲自完成千人以上的项目，日后必进大公司,欢迎踊跃报名,在留言区报名即可,要求如下:拿过各种比赛全国赛一等奖者,能完成老师作业区所有作业者,或者NOIP参赛选手</marquee>
+	 
+           	 	<!--<marquee style="color:white;font-size:17">张钰涵说:</marquee>-->
+                   
+            <br />
+            <marquee style="color:white;font-size:17">张钰涵说:</marquee>
+            <br><br>
+            
+            <div style="text-align:center;">
+	     
+		            <a href="/level1"><img src='/level/update1.jpg' style="width:260;height:140"/></a>
+		  	
+	        
+	        	
+	        	
+		            <a href="/level2"><img src='/level/2.jpg' style="width:260;height:140"/></a>
+		
+	        	
+	        	
+		            <a href="/level3"><img src='/level/3.jpg' style="width:260;height:140"/></a>
+		       
+	        	
+	        	
+		            <a href="/level4"><img src='/level/4.jpg' style="width:260;height:140"/></a>
+		        	
+	        	
+	        	
+	        	
+	        
+		            <a href="/htmlGame"><img src='/level/5.jpg' style="width:260;height:140"/></a>
+		      
+	        	
+	        	
+		            <a href="/js"><img src='/level/6.jpg' style="width:260;height:140"/></a>
+		        	
+	        	
+	        	
+		            <a href="/exp"><img src='/level/7.jpg' style="width:260;height:140"/></a>
+		            
+		            <a href="/rank8"><img src='/level/8.jpg' style="width:260;height:140"/></a>
+			<a href="http://heliang.tech/codes"><img src='/level/9.png' style="width:260;height:140"/></a>
+		        	
+        	</div>
+            
+            <div style="background-color:black;color:white;text-align:center;margin-top:25;width:100%">
+            	
+免责申明:
+<br>本站图片不属于我站,均来自于网络资源下载中心收集整理
+仅供学习交流,版权归原作者所有,并不代表我站的观点<br>
+本站将不承担任何法律责任,如有侵犯到您的权利请及时联系我们删除,
+QQ:598265430 VX:13272100753<br>
+            	
+            </div>
+            
+            
+        
+	
+	
+	</div>
+	
+	
+
+</body>
+  </html>	
+ <script>
+	window.oncontextmenu = function(){
+		alert('别想按右键查看源代码修改数据')
+		return false
+	}
+
+</script>   
+
+<script>
+				
+			window.onload = function(){
+			if(document.cookie==1){ two.style.display = 'none'; t=100   }
+			if(document.cookie==0) {t=0}
+			}
+			close1.onclick = function(){
+					document.cookie = 1
+				alert('关闭成功')
+			}	
+			open1.onclick = function(){
+				document.cookie = 0
+				alert('开启成功')
+				
+			}	
+			//获取画板
+			//doccument 当前文档
+			//getElement 获取一个标签
+			//ById 通过Id名称的方式
+			//var 声明一片空间
+			//var canvas 声明一片空间的名字叫做canvas
+			var canvas = document.getElementById("canvas");
+			//获取画板权限 上下文
+			var ctx = canvas.getContext("2d");
+			//让画板的大小等于屏幕的大小
+			/*
+				思路：
+					1.获取屏幕对象
+					2.获取屏幕的尺寸
+					3.屏幕的尺寸赋值给画板
+			*/
+			//获取屏幕对象
+			var s = window.screen;
+			//获取屏幕的宽度和高度
+			var w = s.width;
+			var h = s.height;
+			//设置画板的大小
+			canvas.width = w;
+			canvas.height = h;
+ 
+			//设置文字大小 
+			var fontSize = 14;
+			//计算一行有多少个文字 取整数 向下取整
+			var clos = Math.floor(w/fontSize);
+			//思考每一个字的坐标
+			//创建数组把clos 个 0 （y坐标存储起来）
+			var drops = [];
+			var str = "qwertyuiopasdfghjklzxcvbnm";
+			//往数组里面添加 clos 个 0
+			for(var i = 0;i<clos;i++) {
+				drops.push(0);
+			}
+ 			t = 0
+			
+			//绘制文字
+			function drawString() {
+				if(t>=80){
+					two.style.display = 'none'
+					canvas.style.display = 'none'
+					
+							clearInterval(a)
+					canvas.width=0
+					canvas.height=0
+					two.width=0
+					two.height=0
+					
+				}else{
+				
+				//给矩形设置填充色
+				ctx.fillStyle="rgba(0,0,0,0.05)"
+				//绘制一个矩形
+				ctx.fillRect(0,0,w,h);
+ 
+				//添加文字样式
+				ctx.font = "600 "+fontSize+"px 微软雅黑";
+				//设置文字颜色
+				ctx.fillStyle = "#ff2d2d";
+ 				t++
+				
+				for(var i = 0;i<clos;i++) {
+					//x坐标
+					var x = i*fontSize;
+					//y坐标
+					var y = drops[i]*fontSize;
+					//设置绘制文字
+					ctx.fillText(str[Math.floor(Math.random()*str.length)],x,y);
+					if(y>h&&Math.random()>0.99){
+						drops[i] = 0;
+					}
+					drops[i]++;
+				}
+				}
+					
+			}
+				//定义一个定时器，每隔30毫秒执行一次
+			a = setInterval(drawString,20);
+			
+</script>
+
+
+
+
+
+
+
+
+    	
+    	
+       
+        
+        
